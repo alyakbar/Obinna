@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
+import Link from "next/link"
 import { Play, ExternalLink } from "lucide-react"
 
 export function Media() {
@@ -31,6 +32,7 @@ export function Media() {
       thumbnail:
         "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ce85d23e-64b0-43d7-8e7e-717124ce52e9-PDsZEWDxSJnVVQDrXsRqGILYGEaY9Y.webp",
       type: "video",
+      href: "https://www.youtube.com/@ObinnaTvofficial",
     },
     {
       title: "Radio Show Highlights",
@@ -38,6 +40,7 @@ export function Media() {
       thumbnail:
         "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/GdkpCxrXIAA3zT5-UmUTQot0yvk9Y5uUhMJXebPqEyeKpb.jpeg",
       type: "video",
+      href: "https://www.youtube.com/@africanproblemsunfiltered",
     },
     {
       title: "Behind the Scenes",
@@ -45,6 +48,7 @@ export function Media() {
       thumbnail:
         "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Oga-Obinna-Igiza-660x400-lRMC1NzktOOjesdP7exvXMV6QwYPBu.jpeg",
       type: "video",
+      href: "https://www.youtube.com/@ObinnaTVExtra",
     },
     {
       title: "Event Hosting",
@@ -52,6 +56,7 @@ export function Media() {
       thumbnail:
         "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/f1eb760c-8215-404e-99ff-794fbf175640.jpg-UqqvtH9z62b8u6LyDMzORcbF9d2RGx.jpeg",
       type: "video",
+      href: "https://www.youtube.com/@tonightlivewithobinna",
     },
     {
       title: "Brand Collaborations",
@@ -59,13 +64,15 @@ export function Media() {
       thumbnail:
         "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/168268816841802.jpg-H7VM1j0WYe7C4Yp4ZoC8IO1arZiNU5.jpeg",
       type: "video",
+      href: "https://www.youtube.com/@zabe_254?si=D7HM6fmG21EoBM_b",
     },
     {
       title: "Cultural Content",
-      description: "Bridging Kenyan and Nigerian cultures",
+      description: "Bridging Kenyan and Nigerian  cultures",
       thumbnail:
         "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/hq720.jpg-yk19w9F0uCOrPAxCaEyb4pCjfGe24W.jpeg",
       type: "video",
+      href: "https://www.youtube.com/@theobinnaz",
     },
   ]
 
@@ -87,40 +94,41 @@ export function Media() {
         {/* Media Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {mediaItems.map((item, index) => (
-            <div
-              key={item.title}
-              className={`card overflow-hidden group cursor-pointer transition-all duration-800 ${
-                isVisible ? "animate-fade-in-up" : "opacity-0"
-              }`}
-              style={{ animationDelay: `${index * 150}ms` }}
-            >
-              <div className="relative overflow-hidden">
-                <picture>
-                  <source media="(max-width: 768px)" srcSet={`${item.thumbnail}?w=400&h=250&fit=crop`} />
-                  <img
-                    src={item.thumbnail || "/placeholder.svg"}
-                    alt={item.title}
-                    className="w-full h-40 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                    loading="lazy"
-                  />
-                </picture>
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <Play className="w-6 h-6 sm:w-8 sm:h-8 text-white ml-1" />
+            <Link href={item.href} key={item.title} className="group">
+              <div
+                className={`card overflow-hidden h-full flex flex-col transition-all duration-800 ${
+                  isVisible ? "animate-fade-in-up" : "opacity-0"
+                }`}
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
+                <div className="relative overflow-hidden">
+                  <picture>
+                    <source media="(max-width: 768px)" srcSet={`${item.thumbnail}?w=400&h=250&fit=crop`} />
+                    <img
+                      src={item.thumbnail || "/placeholder.svg"}
+                      alt={item.title}
+                      className="w-full h-40 sm:h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                      loading="lazy"
+                    />
+                  </picture>
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                      <Play className="w-6 h-6 sm:w-8 sm:h-8 text-white ml-1" />
+                    </div>
+                  </div>
+                </div>
+                <div className="p-4 sm:p-6 flex flex-col flex-grow">
+                  <h3 className="font-bold text-lg sm:text-xl text-gray-900 mb-2 group-hover:text-gray-700 transition-colors line-clamp-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-gray-600 mb-4 line-clamp-2 flex-grow">{item.description}</p>
+                  <div className="flex items-center text-gray-900 text-sm sm:text-base font-medium mt-auto">
+                    Watch Now
+                    <ExternalLink className="w-4 h-4 ml-1" />
                   </div>
                 </div>
               </div>
-              <div className="p-4 sm:p-6">
-                <h3 className="font-bold text-lg sm:text-xl text-gray-900 mb-2 group-hover:text-gray-700 transition-colors line-clamp-2">
-                  {item.title}
-                </h3>
-                <p className="text-sm sm:text-base text-gray-600 mb-4 line-clamp-2">{item.description}</p>
-                <div className="flex items-center text-gray-900 text-sm sm:text-base font-medium">
-                  Watch Now
-                  <ExternalLink className="w-4 h-4 ml-1" />
-                </div>
-              </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

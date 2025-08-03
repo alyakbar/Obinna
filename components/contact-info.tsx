@@ -35,9 +35,9 @@ export function ContactInfo() {
     {
       icon: Phone,
       title: "Phone",
-      value: "+254 700 000 000",
+      value: "+254 798 663936",
       link: "tel:+254700000000",
-      description: "Direct line for urgent bookings",
+      description: "Direct line for urgent bookings TEXT OR WHAT'S APP ONLY",
     },
     {
       icon: MapPin,

@@ -77,7 +77,7 @@ export function Contact() {
     {
       icon: Phone,
       title: "Phone",
-      value: "+254 700 000 000",
+      value: "+254 798 663936 TEXT OR WHAT'S APP ONLY",
       link: "tel:+254700000000",
     },
     {

@@ -26,7 +26,7 @@ export function Footer() {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://youtube.com/@obinnatv"
+                href="https://www.youtube.com/@ObinnaTvofficial"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-red-600 transition-colors duration-300 min-h-[44px] min-w-[44px]"
@@ -113,6 +113,7 @@ export function Footer() {
                   className="text-gray-400 hover:text-white transition-colors duration-300 text-sm sm:text-base min-h-[44px] flex items-center"
                 >
                   +254 798 663936
+                  TEXT OR WHAT'S APP ONLY
                 </a>
               </div>
               <div className="flex items-start space-x-3">

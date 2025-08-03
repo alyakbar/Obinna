@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { Play, Clock, Eye, ExternalLink, Filter } from "lucide-react"
+import { url } from "inspector"
 
 export function ShowCategories() {
   const [isVisible, setIsVisible] = useState(false)
@@ -63,6 +64,7 @@ export function ShowCategories() {
         duration: "45:32",
         views: "250K",
         type: "Interview",
+        url: "https://www.youtube.com/@ObinnaTvofficial"
       },
       {
         id: 2,
@@ -73,6 +75,7 @@ export function ShowCategories() {
         duration: "18:45",
         views: "180K",
         type: "Behind the Scenes",
+        url: "https://www.youtube.com/@tonightlivewithobinna"        
       },
       {
         id: 3,
@@ -83,6 +86,7 @@ export function ShowCategories() {
         duration: "52:18",
         views: "320K",
         type: "Discussion",
+        url: "https://www.youtube.com/@tonightlivewithobinna" 
       },
       {
         id: 4,
@@ -105,6 +109,7 @@ export function ShowCategories() {
         duration: "35:20",
         views: "145K",
         type: "Extended",
+        url: "https://www.youtube.com/@ObinnaTVExtra",
       },
       {
         id: 6,
@@ -115,6 +120,7 @@ export function ShowCategories() {
         duration: "22:30",
         views: "98K",
         type: "Preparation",
+        url: "https://www.youtube.com/@ObinnaTVExtra",
       },
       {
         id: 7,
@@ -125,6 +131,7 @@ export function ShowCategories() {
         duration: "15:45",
         views: "125K",
         type: "Moments",
+        url: "https://www.youtube.com/@ObinnaTVExtra",
       },
     ],
     obinnaz: [
@@ -137,6 +144,7 @@ export function ShowCategories() {
         duration: "25:10",
         views: "280K",
         type: "Comedy",
+        url : "https://www.youtube.com/@theobinnaz"
       },
       {
         id: 9,
@@ -147,6 +155,7 @@ export function ShowCategories() {
         duration: "32:45",
         views: "210K",
         type: "Team Content",
+        url : "https://www.youtube.com/@theobinnaz"
       },
     ],
     zabe: [
@@ -159,6 +168,7 @@ export function ShowCategories() {
         duration: "38:20",
         views: "165K",
         type: "Cultural",
+        url: "https://www.youtube.com/@zabe_254?si=D7HM6fmG21EoBM_b"  
       },
       {
         id: 11,
@@ -169,6 +179,7 @@ export function ShowCategories() {
         duration: "42:15",
         views: "190K",
         type: "Community",
+        url: "https://www.youtube.com/@zabe_254?si=D7HM6fmG21EoBM_b"  
       },
     ],
   }
@@ -303,10 +314,10 @@ export function ShowCategories() {
                 <p className="text-slate-600 text-sm mb-4 line-clamp-2 leading-relaxed">{content.description}</p>
 
                 {/* CTA */}
-                <button className="inline-flex items-center text-purple-600 text-sm font-medium group-hover:text-purple-700 transition-colors duration-300">
-                  Watch Now
-                  <ExternalLink className="w-4 h-4 ml-1 transition-transform group-hover:scale-110" />
-                </button>
+                  <a href={content.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-purple-600 text-sm font-medium group-hover:text-purple-700 transition-colors duration-300">
+                    <span>Watch Now</span>
+                    <ExternalLink className="w-4 h-4 ml-1 transition-transform group-hover:scale-110" />
+                    </a>
               </div>
             </div>
           ))}
@@ -323,7 +334,7 @@ export function ShowCategories() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://youtube.com/@obinnatv"
+                href="https://www.youtube.com/@ObinnaTvofficial"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary group"
@@ -332,7 +343,7 @@ export function ShowCategories() {
                 Subscribe on YouTube
                 <ExternalLink className="w-4 h-4 ml-2" />
               </a>
-              <button className="btn-secondary">Get Notifications</button>
+              {/* <button className="btn-secondary">Get Notifications</button> */}
             </div>
           </div>
         </div>

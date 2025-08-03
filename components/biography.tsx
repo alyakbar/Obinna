@@ -37,7 +37,7 @@ export function Biography() {
               />
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl flex items-center justify-center">
                 <div className="text-center text-white">
-                  <div className="text-2xl font-bold">5+</div>
+                  <div className="text-2xl font-bold">13+</div>
                   <div className="text-sm">Years</div>
                 </div>
               </div>
@@ -52,7 +52,7 @@ export function Biography() {
 
             <div className="prose prose-lg text-gray-600 space-y-6">
               <p>
-                <strong>Steve Thompson Maghana</strong>, professionally known as Oga Obinna, represents the new
+                <strong>Steve Thompson Magana</strong>, professionally known as Oga Obinna, represents the new
                 generation of African entertainers who seamlessly blend traditional storytelling with contemporary
                 humor. Born to a Kenyan mother and Nigerian father, his multicultural background provides a unique
                 perspective that resonates across East Africa and beyond.

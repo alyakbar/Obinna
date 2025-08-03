@@ -40,7 +40,7 @@ export function MediaHero() {
               <div className="text-sm text-white/70">Episodes</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-white mb-1">50M+</div>
+              <div className="text-2xl sm:text-3xl font-bold text-white mb-1">5 0M+</div>
               <div className="text-sm text-white/70">Views</div>
             </div>
             <div className="text-center">

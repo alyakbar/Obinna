@@ -40,7 +40,7 @@ export function About() {
 
             <div className="prose-custom">
               <p>
-                <strong className="text-slate-900 font-semibold">Steve Thompson Maghana</strong>, professionally known
+                <strong className="text-slate-900 font-semibold">Steve Thompson Magana</strong>, professionally known
                 as Oga Obinna, is East Africa's most dynamic entertainer who has redefined comedy and media across the
                 region. With his unique blend of humor, authenticity, and cultural insight, he has become the go-to
                 personality for premium entertainment experiences.
@@ -79,7 +79,7 @@ export function About() {
               </picture>
               <div className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-gradient-to-r from-[#F3C623] to-[#FFD700] rounded-2xl flex items-center justify-center shadow-gold-glow">
                 <div className="text-center text-slate-900">
-                  <div className="text-lg sm:text-xl font-bold font-dm-serif">5+</div>
+                  <div className="text-lg sm:text-xl font-bold font-dm-serif">13+</div>
                   <div className="text-xs font-poppins font-medium">Years</div>
                 </div>
               </div>
