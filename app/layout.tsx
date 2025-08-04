@@ -31,14 +31,16 @@ export const metadata: Metadata = {
     "Professional entertainer, comedian, radio host, and content creator. Book premium entertainment services for your events.",
   keywords: "Oga Obinna, comedian, radio host, MC, entertainment, Kenya, Nigeria",
   openGraph: {
-    title: "Oga Obinna | East Africa's Premier Entertainer",
+    title: "OgaObinna | East Africa's Premier Entertainer",
     description: "Professional entertainer and media personality",
     url: "https://ogaobinna.com",
-    siteName: "Oga Obinna",
+    siteName: "OgaObinna",
     locale: "en_US",
-    type: "website",
+    type: "website", // path to your favicon in public/
   },
-    generator: 'v0.dev'
+    icons: {
+    icon: '/favicon.jpg', // Pointing to your .jpg image
+  },
 }
 
 export default function RootLayout({
