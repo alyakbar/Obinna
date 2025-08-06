@@ -263,7 +263,7 @@ export function HeroCarousel() {
               </button>
               <button onClick={() => scrollToSection("media")} className="btn-secondary w-full sm:w-auto group">
                 <Play className="w-4 h-4 sm:w-5 sm:h-5 mr-2 transition-transform group-hover:scale-110" />
-                Watch Content
+                Watch Content.
               </button>
             </div>
           </div>
