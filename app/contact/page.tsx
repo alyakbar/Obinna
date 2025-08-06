@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Contact & Booking | Oga Obinna Entertainment",
   description:
     "Get in touch with Oga Obinna for bookings, collaborations, and inquiries. Professional entertainment services across East Africa and beyond.",
-  keywords: "Oga Obinna contact, booking inquiries, entertainment services, event booking, collaboration",
+  keywords: "OgaObinna contact, booking inquiries, entertainment services, event booking, collaboration",
 }
 
 export default function ContactPage() {
