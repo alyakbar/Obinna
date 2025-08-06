@@ -47,7 +47,7 @@ export function ServiceDetails() {
       id: "event-mc",
       icon: Mic,
       title: "Event MC",
-      price: "From KSh 50,000",
+      price: "$3,000",
       duration: "2-8 hours",
       description:
         "Transform your event with Kenya's most charismatic MC. Oga Obinna brings unmatched energy, crowd engagement, and seamless event flow management.",
@@ -66,7 +66,7 @@ export function ServiceDetails() {
       id: "influencing",
       icon: Star,
       title: "Brand Influencing",
-      price: "From KSh 100,000",
+      price: "$15,000(SMEs monthly) -  $115,830(Co-operate Yearly)",
       duration: "Campaign based",
       description:
         "Leverage Oga Obinna's massive social media following and authentic voice to amplify your brand message across multiple platforms.",
@@ -85,7 +85,7 @@ export function ServiceDetails() {
       id: "apology-package",
       icon: Heart,
       title: "Apology Package",
-      price: "From KSh 25,000",
+      price: "$100",
       duration: "1-2 hours",
       description: "A unique and humorous way to send apologies through Obinna's personal delivery and charm.",
       fullDescription:
@@ -103,7 +103,7 @@ export function ServiceDetails() {
       id: "appearance",
       icon: Award,
       title: "Special Appearance",
-      price: "From KSh 75,000",
+      price: "$1,500",
       duration: "1-3 hours",
       description: "Add star power to your event with Oga Obinna's special appearance and celebrity presence.",
       fullDescription:
@@ -121,7 +121,7 @@ export function ServiceDetails() {
       id: "event-management",
       icon: Users,
       title: "Event Management",
-      price: "From KSh 200,000",
+      price: "$3,000",
       duration: "Full service",
       description: "Complete end-to-end event management by Obinna's professional team for flawless execution.",
       fullDescription:
@@ -139,7 +139,7 @@ export function ServiceDetails() {
       id: "sound-dj",
       icon: Music,
       title: "Sound & DJ Services",
-      price: "From KSh 40,000",
+      price: "$1,500",
       duration: "4-12 hours",
       description: "Professional sound system and DJ services curated by Obinna's entertainment network.",
       fullDescription:
@@ -157,7 +157,7 @@ export function ServiceDetails() {
       id: "photography",
       icon: Camera,
       title: "Event Photography",
-      price: "From KSh 60,000",
+      price: "$1,500",
       duration: "4-8 hours",
       description: "Capture your moments with high-quality photography coverage and professional editing.",
       fullDescription:
@@ -175,7 +175,7 @@ export function ServiceDetails() {
       id: "meet-greet",
       icon: HandHeart,
       title: "Meet & Greet",
-      price: "From KSh 30,000",
+      price: "$1,500",
       duration: "30-60 minutes",
       description: "Book a personal session with Obinna for fans, friends, or clients in an intimate setting.",
       fullDescription:
@@ -238,7 +238,7 @@ export function ServiceDetails() {
                     <div className="flex items-center gap-4">
                       <div className="text-right hidden sm:block">
                         <div className="flex items-center gap-2 text-gold-600 font-semibold mb-1">
-                          <DollarSign className="w-4 h-4" />
+                          {/* <DollarSign className="w-4 h-4" /> */}
                           {service.price}
                         </div>
                         <div className="flex items-center gap-2 text-gray-500 text-sm">

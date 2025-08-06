@@ -15,6 +15,7 @@ import {
   Music,
   Camera,
   HandHeart,
+  AlertCircle,
 } from "lucide-react"
 
 // Service definitions with descriptions
@@ -81,6 +82,7 @@ export function Booking() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
@@ -107,24 +109,52 @@ export function Booking() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError(null)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-
-    setIsSubmitted(true)
-    setIsSubmitting(false)
-
-    // Reset form after success message
-    setTimeout(() => {
-      setIsSubmitted(false)
-      setFormData({
-        name: "",
-        email: "",
-        eventType: "",
-        eventDate: "",
-        message: "",
+    try {
+      const response = await fetch('/api', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       })
-    }, 3000)
+
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(errorData.error || 'Failed to send booking request')
+      }
+
+      const result = await response.json()
+      console.log('Success:', result)
+      
+      setIsSubmitted(true)
+      setIsSubmitting(false)
+
+      // Reset form after success message
+      setTimeout(() => {
+        setIsSubmitted(false)
+        setFormData({
+          name: "",
+          email: "",
+          eventType: "",
+          eventDate: "",
+          message: "",
+        })
+      }, 5000) // Increased to 5 seconds to let user read success message
+
+    } catch (error) {
+      console.error('Error:', error)
+      setIsSubmitting(false)
+      setError(
+        error instanceof Error 
+          ? error.message 
+          : 'Failed to send booking request. Please try again or contact us directly.'
+      )
+      
+      // Clear error after 8 seconds
+      setTimeout(() => setError(null), 8000)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -224,6 +254,16 @@ export function Booking() {
               <p className="text-lg text-gray-600">Fill out the form below and we'll get back to you within 24 hours</p>
             </div>
 
+            {/* Error Display */}
+            {error && (
+              <div className="bg-red-50 border border-red-200 rounded-xl p-4 mb-6 animate-fade-in-up">
+                <div className="flex items-center gap-3">
+                  <AlertCircle className="w-5 h-5 text-red-500 flex-shrink-0" />
+                  <p className="text-red-800 font-medium">{error}</p>
+                </div>
+              </div>
+            )}
+
             {!isSubmitted ? (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
@@ -238,7 +278,8 @@ export function Booking() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#3D0066] focus:border-[#3D0066] transition-colors duration-300 text-base min-h-[48px]"
+                      disabled={isSubmitting}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#3D0066] focus:border-[#3D0066] transition-colors duration-300 text-base min-h-[48px] disabled:opacity-50 disabled:cursor-not-allowed"
                       placeholder="Your full name"
                     />
                   </div>
@@ -254,7 +295,8 @@ export function Booking() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#3D0066] focus:border-[#3D0066] transition-colors duration-300 text-base min-h-[48px]"
+                      disabled={isSubmitting}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#3D0066] focus:border-[#3D0066] transition-colors duration-300 text-base min-h-[48px] disabled:opacity-50 disabled:cursor-not-allowed"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -271,7 +313,8 @@ export function Booking() {
                       value={formData.eventType}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#3D0066] focus:border-[#3D0066] transition-colors duration-300 text-base min-h-[48px]"
+                      disabled={isSubmitting}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#3D0066] focus:border-[#3D0066] transition-colors duration-300 text-base min-h-[48px] disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       <option value="">Select event type</option>
                       <option value="Corporate Event">Corporate Event</option>
@@ -294,7 +337,8 @@ export function Booking() {
                       name="eventDate"
                       value={formData.eventDate}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#3D0066] focus:border-[#3D0066] transition-colors duration-300 text-base min-h-[48px]"
+                      disabled={isSubmitting}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#3D0066] focus:border-[#3D0066] transition-colors duration-300 text-base min-h-[48px] disabled:opacity-50 disabled:cursor-not-allowed"
                     />
                   </div>
                 </div>
@@ -309,8 +353,9 @@ export function Booking() {
                     value={formData.message}
                     onChange={handleChange}
                     required
+                    disabled={isSubmitting}
                     rows={5}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#3D0066] focus:border-[#3D0066] transition-colors duration-300 resize-none text-base"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#3D0066] focus:border-[#3D0066] transition-colors duration-300 resize-none text-base disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder="Tell us about your event, expected audience size, venue, and any specific requirements..."
                   />
                 </div>
@@ -318,40 +363,19 @@ export function Booking() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-[#3D0066] hover:bg-[#2A0047] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#3D0066] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed min-h-[56px] flex items-center justify-center"
+                  className="w-full bg-[#3D0066] hover:bg-[#2A0047] text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#3D0066] focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed min-h-[48px]"
                 >
-                  {isSubmitting ? (
-                    <>
-                      <div className="w-6 h-6 border-2 border-white border-t-transparent rounded-full animate-spin mr-3"></div>
-                      Sending Request...
-                    </>
-                  ) : (
-                    <>
-                      <Send className="w-5 h-5 mr-3" />
-                      Submit Booking Request
-                    </>
-                  )}
+                  {isSubmitting ? "Submitting..." : "Send Booking Request"}
                 </button>
-
-                <p className="text-center text-sm text-gray-500 mt-4">
-                  Direct bookings only • No third-party agencies • Response within 24 hours
-                </p>
               </form>
             ) : (
-              <div className="text-center py-12 animate-fade-in-up">
-                <CheckCircle className="w-20 h-20 text-green-500 mx-auto mb-6" />
-                <h3 className="font-bold text-2xl sm:text-3xl text-gray-900 mb-4">Request Sent Successfully!</h3>
-                <p className="text-gray-600 text-lg sm:text-xl mb-6">
-                  Thank you for your booking request. We'll get back to you within 24 hours with availability and
-                  pricing.
+              <div className="flex flex-col items-center justify-center py-12 animate-fade-in-up">
+                <CheckCircle className="w-12 h-12 text-green-500 mb-4" />
+                <h4 className="text-2xl font-bold text-gray-900 mb-2">Booking Request Sent!</h4>
+                <p className="text-lg text-gray-700 mb-2">
+                  Thank you for your interest. We'll get back to you within 24 hours.
                 </p>
-                <div className="bg-green-50 border border-green-200 rounded-xl p-6 max-w-md mx-auto">
-                  <p className="text-green-800 font-medium">
-                    📧 Check your email for confirmation
-                    <br />📱 We'll call you to discuss details
-                    <br />⭐ Get ready for an amazing event!
-                  </p>
-                </div>
+                <p className="text-gray-500">If you don't hear from us, please check your spam folder or contact us directly.</p>
               </div>
             )}
           </div>

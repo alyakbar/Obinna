@@ -75,7 +75,7 @@ export function ShowCategories() {
         duration: "18:45",
         views: "180K",
         type: "Behind the Scenes",
-        url: "https://www.youtube.com/@tonightlivewithobinna"        
+        url: "https://www.youtube.com/@ObinnaTvofficial"        
       },
       {
         id: 3,
@@ -86,7 +86,7 @@ export function ShowCategories() {
         duration: "52:18",
         views: "320K",
         type: "Discussion",
-        url: "https://www.youtube.com/@tonightlivewithobinna" 
+        url: "https://www.youtube.com/@ObinnaTvofficial" 
       },
       {
         id: 4,
@@ -97,6 +97,7 @@ export function ShowCategories() {
         duration: "28:15",
         views: "195K",
         type: "Experience",
+        url: "https://www.youtube.com/@ObinnaTvofficial" 
       },
     ],
     "obinna-show-extra": [

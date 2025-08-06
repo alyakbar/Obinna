@@ -20,7 +20,7 @@ export function Stats() {
   // Final values fetched or static
   const [finalStats, setFinalStats] = useState({
     subs: 500000,       // Default fallback (500k)
-    followers: 2000000, // 1M
+    followers: 2500000, // 1M
     events: 100,
     years: 13,
   })

@@ -40,24 +40,36 @@ export function Contact() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-
-    setIsSubmitted(true)
-    setIsSubmitting(false)
-
-    // Reset form after success message
-    setTimeout(() => {
-      setIsSubmitted(false)
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        eventType: "",
-        eventDate: "",
-        message: "",
+    try {
+      const response = await fetch("/api", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       })
-    }, 3000)
+
+      if (response.ok) {
+        setIsSubmitted(true)
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          eventType: "",
+          eventDate: "",
+          message: "",
+        })
+        // Optionally reset after a delay
+        setTimeout(() => setIsSubmitted(false), 3000)
+      } else {
+        // Handle error (show message, etc.)
+        alert("Failed to send. Please try again.")
+      }
+    } catch (error) {
+      alert("An error occurred. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {

@@ -27,12 +27,12 @@ export function FeaturedBrands() {
   const brands = [
     {
       name: "Zinco Mabati",
-      logo: "/placeholder.svg?height=80&width=200&text=Zinco+Mabati",
+      logo: "/img/zinco mbati.jpeg",
       description: "Premium roofing solutions partner",
     },
     {
       name: "Mozzart",
-      logo: "/placeholder.svg?height=80&width=200&text=Mozzart",
+      logo: "/img/mozzart-logo.svg",
       description: "Leading entertainment platform partnership",
     },
   ]
