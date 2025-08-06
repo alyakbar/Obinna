@@ -259,7 +259,7 @@ export function HeroCarousel() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4 max-w-md sm:max-w-none mx-auto">
               <button onClick={() => scrollToSection("booking")} className="btn-primary w-full sm:w-auto group">
                 <Calendar className="w-4 h-4 sm:w-5 sm:h-5 mr-2 transition-transform group-hover:scale-110" />
-                Book Events
+                Book Events.
               </button>
               <button onClick={() => scrollToSection("media")} className="btn-secondary w-full sm:w-auto group">
                 <Play className="w-4 h-4 sm:w-5 sm:h-5 mr-2 transition-transform group-hover:scale-110" />
