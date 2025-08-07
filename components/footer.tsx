@@ -132,6 +132,17 @@ export function Footer() {
           <p className="text-gray-400 text-xs sm:text-sm">
             © {currentYear} Oga Obinna. All rights reserved. | Premium Entertainment Services
           </p>
+          <p className="text-gray-500 text-xs sm:text-sm mt-2">
+            Website by{" "}
+            <a
+              href="https://Iqbalagency.netlify.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-white transition-colors duration-300"
+            >
+              Iqbal Agency
+            </a>
+          </p>
         </div>
       </div>
     </footer>

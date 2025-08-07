@@ -191,36 +191,20 @@ export function Booking() {
                   className="group relative overflow-hidden"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  {/* Service Card */}
                   <button
                     onClick={() => toggleService(service.id)}
                     className="w-full bg-[#3D0066] hover:bg-[#FFD700] text-white hover:text-[#0E0E0E] p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#FFD700] focus:ring-offset-2 focus:ring-offset-[#0E0E0E] min-h-[120px] flex flex-col items-center justify-center text-center"
                   >
                     <IconComponent className="w-8 h-8 mb-3 transition-colors duration-300" />
                     <h3 className="font-bold text-lg mb-2 transition-colors duration-300">{service.title}</h3>
-                    <ChevronDown
-                      className={`w-5 h-5 transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`}
-                    />
+                    {isExpanded ? (
+                      <p className="text-gray-100 mt-2">{service.description}</p>
+                    ) : (
+                      <ChevronDown
+                        className={`w-5 h-5 transition-transform duration-300`}
+                      />
+                    )}
                   </button>
-
-                  {/* Expanded Description */}
-                  {isExpanded && (
-                    <div className="absolute top-full left-0 right-0 z-10 bg-white border border-gray-200 rounded-xl shadow-xl p-6 mt-2 animate-fade-in-up">
-                      <div className="flex items-start gap-3">
-                        <IconComponent className="w-6 h-6 text-[#3D0066] flex-shrink-0 mt-1" />
-                        <div>
-                          <h4 className="font-bold text-lg text-gray-900 mb-2">{service.title}</h4>
-                          <p className="text-gray-700 leading-relaxed">{service.description}</p>
-                        </div>
-                      </div>
-                      <button
-                        onClick={() => toggleService(service.id)}
-                        className="absolute top-3 right-3 p-1 hover:bg-gray-100 rounded-full transition-colors duration-200"
-                      >
-                        <ChevronUp className="w-5 h-5 text-gray-500" />
-                      </button>
-                    </div>
-                  )}
                 </div>
               )
             })}

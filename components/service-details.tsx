@@ -85,7 +85,7 @@ export function ServiceDetails() {
       id: "apology-package",
       icon: Heart,
       title: "Apology Package",
-      price: "$100",
+      price: "Customizable",
       duration: "1-2 hours",
       description: "A unique and humorous way to send apologies through Obinna's personal delivery and charm.",
       fullDescription:
