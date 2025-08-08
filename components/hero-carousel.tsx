@@ -16,16 +16,26 @@ export function HeroCarousel() {
   const slides = [
     {
       id: 1,
-      role: "Media Personality",
-      subtitle: "Professional interviews and engaging conversations in premium studio settings",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0525.JPG-hUmDGM0ps0TvAsL7zLK4L5Km0Gdllg.jpeg",
-      alt: "Oga Obinna - Professional Media Interview Setting",
-      // Grey suit, thoughtful pose - face positioned upper center
-      mobilePosition: "object-[50%_25%]", // Face focus for mobile
-      desktopPosition: "object-[50%_30%]", // Slightly lower for desktop
+      role: "Premium Entertainer",
+      subtitle: "Elegant formal presentations and high-end event hosting services",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0523.JPG-QgUskvsyZU3FbvNruuJTsHqqfjLPlY.jpeg",
+      alt: "Oga Obinna - Formal Event Entertainment",
+      // Blue tuxedo headshot - close-up, face centered
+      mobilePosition: "object-[50%_30%]",
+      desktopPosition: "object-[50%_35%]",
     },
     {
       id: 2,
+      role: "Master of Ceremonies",
+      subtitle: "Dynamic stage presence bringing energy and excitement to every event",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0521.JPG-IFtxqsiXjgqvfOGrmdfstxvXdKDt39.jpeg",
+      alt: "Oga Obinna - Dynamic MC Performance",
+      // Blue tuxedo, arms outstretched - full body, face needs upper positioning
+      mobilePosition: "object-[50%_15%]", // Much higher for mobile to show face
+      desktopPosition: "object-[50%_20%]",
+    },
+    {
+      id: 3,
       role: "Talk Show Host",
       subtitle: "Creating memorable moments with authentic conversations and genuine connections",
       image:
@@ -36,24 +46,14 @@ export function HeroCarousel() {
       desktopPosition: "object-[50%_25%]",
     },
     {
-      id: 3,
-      role: "Premium Entertainer",
-      subtitle: "Elegant formal presentations and high-end event hosting services",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0523.JPG-QgUskvsyZU3FbvNruuJTsHqqfjLPlY.jpeg",
-      alt: "Oga Obinna - Formal Event Entertainment",
-      // Blue tuxedo headshot - close-up, face centered
-      mobilePosition: "object-[50%_30%]",
-      desktopPosition: "object-[50%_35%]",
-    },
-    {
       id: 4,
-      role: "Master of Ceremonies",
-      subtitle: "Dynamic stage presence bringing energy and excitement to every event",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0521.JPG-IFtxqsiXjgqvfOGrmdfstxvXdKDt39.jpeg",
-      alt: "Oga Obinna - Dynamic MC Performance",
-      // Blue tuxedo, arms outstretched - full body, face needs upper positioning
-      mobilePosition: "object-[50%_15%]", // Much higher for mobile to show face
-      desktopPosition: "object-[50%_20%]",
+      role: "Media Personality",
+      subtitle: "Professional interviews and engaging conversations in premium studio settings",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0525.JPG-hUmDGM0ps0TvAsL7zLK4L5Km0Gdllg.jpeg",
+      alt: "Oga Obinna - Professional Media Interview Setting",
+      // Grey suit, thoughtful pose - face positioned upper center
+      mobilePosition: "object-[50%_25%]", // Face focus for mobile
+      desktopPosition: "object-[50%_30%]", // Slightly lower for desktop
     },
     {
       id: 5,

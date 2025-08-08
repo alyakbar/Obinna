@@ -24,48 +24,56 @@ const services = [
     id: "event-mc",
     title: "Event MC",
     icon: Mic,
+    price: "$3,000",
     description: "Host your event with energy, humor, and professionalism.",
   },
   {
     id: "influencing",
     title: "Influencing",
     icon: Star,
+    price: "$15,000(SMEs monthly) -  $115,830(Co-operate Yearly)",
     description: "Promote your brand or event through Obinna's social media platforms.",
   },
   {
     id: "apology-package",
     title: "Apology Package",
     icon: Heart,
+    price: "Customizable",
     description: "A unique and humorous way to send apologies through Obinna's personal delivery.",
   },
   {
     id: "appearance",
     title: "Appearance",
     icon: Sparkles,
+    price: "$1,500",
     description: "Book Obinna to show up and make your event unforgettable.",
   },
   {
     id: "event-management",
     title: "Event Management",
     icon: Users,
+    price: "$3,000",
     description: "Full support for planning, coordinating, and executing your event.",
   },
   {
     id: "sound-dj",
     title: "Sound & DJ",
     icon: Music,
+    price: "$1,500",
     description: "Professional sound setup and DJ services to keep the vibe alive.",
   },
   {
     id: "photography",
     title: "Photography",
     icon: Camera,
+    price: "$1,500",
     description: "Capture your moments with high-quality photography coverage.",
   },
   {
     id: "meet-greet",
     title: "Meet & Greet",
     icon: HandHeart,
+    price: "$1,500",
     description: "Book a personal session with Obinna for fans, friends, or clients.",
   },
 ]
@@ -198,11 +206,38 @@ export function Booking() {
                     <IconComponent className="w-8 h-8 mb-3 transition-colors duration-300" />
                     <h3 className="font-bold text-lg mb-2 transition-colors duration-300">{service.title}</h3>
                     {isExpanded ? (
-                      <p className="text-gray-100 mt-2">{service.description}</p>
+                      <>
+                        <p className="text-gray-100 mt-2">{service.description}</p>
+                        <div
+                          role="button"
+                          tabIndex={0}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setFormData((prev) => ({
+                              ...prev,
+                              eventType: service.title,
+                            }));
+                            const bookingForm = document.getElementById("booking-form");
+                            bookingForm?.scrollIntoView({ behavior: "smooth" });
+                          }}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter" || e.key === " ") {
+                              e.preventDefault();
+                              setFormData((prev) => ({
+                                ...prev,
+                                eventType: service.title,
+                              }));
+                              const bookingForm = document.getElementById("booking-form");
+                              bookingForm?.scrollIntoView({ behavior: "smooth" });
+                            }
+                          }}
+                          className="mt-4 bg-[#FFD700] hover:bg-[#FFC700] text-[#0E0E0E] px-4 py-2 rounded-lg font-semibold text-sm transition-all duration-300 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-[#FFD700] focus:ring-offset-2 cursor-pointer"
+                        >
+                          Book
+                        </div>
+                      </>
                     ) : (
-                      <ChevronDown
-                        className={`w-5 h-5 transition-transform duration-300`}
-                      />
+                      <ChevronDown className="w-5 h-5 transition-transform duration-300" />
                     )}
                   </button>
                 </div>
