@@ -36,7 +36,7 @@ const services = [
   },
   {
     id: "apology-package",
-    title: "Apology Package",
+    title: "Apology Package Inperson or Video call",
     icon: Heart,
     price: "Customizable",
     description: "A unique and humorous way to send apologies through Obinna's personal delivery.",
@@ -339,6 +339,8 @@ export function Booking() {
                       <option value="Corporate Event">Corporate Event</option>
                       <option value="Wedding">Wedding</option>
                       <option value="Comedy Show">Comedy Show</option>
+                      <option value="Apology by video">Apology by video</option>
+                      <option value="Apology Inperson">Apology Inperson</option>
                       <option value="Radio Appearance">Radio Appearance</option>
                       <option value="Brand Event">Brand Event</option>
                       <option value="Private Party">Private Party</option>

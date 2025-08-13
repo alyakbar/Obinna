@@ -87,14 +87,14 @@ export function ServiceDetails() {
       title: "Apology Package",
       price: "Customizable",
       duration: "1-2 hours",
-      description: "A unique and humorous way to send apologies through Obinna's personal delivery and charm.",
+      description: "A unique and humorous way to send apologies through Obinna's personal delivery and charm. Either in person or with a video call.",
       fullDescription:
         "Made a mistake? Let Kenya's most beloved entertainer help you make amends! This signature service includes personalized apology videos, custom message crafting, and Obinna's natural charm to help mend relationships. Whether for romantic gestures, business apologies, or family reconciliation, this heartfelt approach has proven success.",
       features: [
         "Personalized apology video creation",
         "Custom message crafting",
-        "Emotional storytelling approach",
-        "High success rate in reconciliation",
+        "Video call apologies $500",
+        "In person apologies $1000",
         "Discreet and professional delivery",
         "Follow-up consultation if needed",
       ],
