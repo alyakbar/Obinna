@@ -9,6 +9,7 @@ import { Testimonials } from "@/components/testimonials"
 import { Booking } from "@/components/booking"
 import { Footer } from "@/components/footer"
 
+
 export default function HomePage() {
   return (
     <>
@@ -21,6 +22,7 @@ export default function HomePage() {
       <Media />
       <Testimonials />
       <Booking />
+   
       <Footer />
     </>
   )

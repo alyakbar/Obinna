@@ -92,7 +92,7 @@ export function Footer() {
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
                 <div className="text-gray-400 text-sm sm:text-base leading-relaxed">
-                  Hillcrest Court, Westlands,
+                Westlands,
                   <br />
                   Nairobi, Kenya
                 </div>

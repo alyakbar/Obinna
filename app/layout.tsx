@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter, DM_Serif_Display, Poppins } from "next/font/google"
 import "./globals.css"
+import ObinnaBot from "@/components/ObinnaBot"
 
 // Premium font pairing for celebrity brand
 const inter = Inter({
@@ -52,6 +53,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${dmSerif.variable} ${poppins.variable} scroll-smooth`}>
       <body className="font-inter antialiased bg-white text-gray-900 selection:bg-gold-400/20 selection:text-gold-900">
         {children}
+        <ObinnaBot />
       </body>
     </html>
   )
